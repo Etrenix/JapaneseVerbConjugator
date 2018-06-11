@@ -8,12 +8,9 @@ import java.util.*;
 public class Verb
 {
     // instance variables - replace the example below with your own
-    // TESTING CHANGES ON GITHUB
     private static final String VOWELS = " aiueo";
     private static final String CONSONANTS = " kgsjztdnfhbpmrwy";
-    private String word;
-    private String theword;
-    private String group;
+    private String word, theword, group;
     private ArrayList<String> roma = new ArrayList<String>();
     private HashMap RH = new HashMap();
 
@@ -36,84 +33,10 @@ public class Verb
 
     private void initialiseRHConverter()
     {
-        RH.put("a", "あ");
-        RH.put("i", "い");
-        RH.put("u", "う");
-        RH.put("e", "え");
-        RH.put("o", "お");
-
-        RH.put("ka", "か"); RH.put("ga", "が");
-        RH.put("ki", "き"); RH.put("gi", "ぎ");
-        RH.put("ku", "く"); RH.put("gu", "ぐ");
-        RH.put("ke", "け"); RH.put("ge", "げ");
-        RH.put("ko", "こ"); RH.put("go", "ご");
-
-        RH.put("sa", "さ"); RH.put("za", "ざ");
-        RH.put("shi", "し");RH.put("ji", "じ");
-        RH.put("su", "す"); RH.put("zu", "ず");
-        RH.put("se", "せ"); RH.put("ze", "ぜ");
-        RH.put("so", "そ"); RH.put("zo", "ぞ");
-        
-        RH.put("ta", "た"); RH.put("da", "だ");
-        RH.put("chi", "ち");RH.put("dzi", "ぢ");
-        RH.put("tsu", "つ");RH.put("dzu", "づ");
-        RH.put("te", "て"); RH.put("de", "で");
-        RH.put("to", "と"); RH.put("do", "ど");
-
-        RH.put("na", "な");
-        RH.put("ni", "に");
-        RH.put("nu", "ぬ");
-        RH.put("ne", "ね");
-        RH.put("no", "の");
-
-        RH.put("ha", "は"); RH.put("ba", "ば"); RH.put("pa", "ぱ");
-        RH.put("hi", "ひ"); RH.put("bi", "び"); RH.put("pi", "ぴ");
-        RH.put("fu", "ふ"); RH.put("hu", "ふ"); RH.put("bu", "ぶ"); RH.put("pu", "ぷ");
-        RH.put("he", "へ"); RH.put("be", "べ"); RH.put("pe", "ぺ");
-        RH.put("ho", "ほ"); RH.put("bo", "ぼ"); RH.put("po", "ぽ");
-        
-        RH.put("ma", "ま");
-        RH.put("mi", "み");
-        RH.put("mu", "む");
-        RH.put("me", "め");
-        RH.put("mo", "も");
-
-        RH.put("ra", "ら");
-        RH.put("ri", "り");
-        RH.put("ru", "る");
-        RH.put("re", "れ");
-        RH.put("ro", "ろ");
-
-        RH.put("wa", "わ");
-        RH.put("wo", "を");
-
-        RH.put("ya", "や");
-        RH.put("yu", "ゆ");
-        RH.put("yo", "よ");
-        
-        RH.put("n", "ん");
-
-        RH.put("kya", "きゃ"); RH.put("gya", "ぎゃ");
-        RH.put("kyu", "きゅ"); RH.put("gyu", "ぎゅ");
-        RH.put("kyo", "きょ"); RH.put("gyo", "ぎょ");
-
-        RH.put("bya", "びゃ"); RH.put("pya", "ぴゃ");
-        RH.put("byu", "びゅ"); RH.put("pyu", "ぴゅ");
-        RH.put("byo", "びょ"); RH.put("pyo", "ぴょ");
-
-        RH.put("sha", "しゃ"); RH.put("ja", "じゃ");
-        RH.put("shu", "しゅ"); RH.put("ju", "じゅ");
-        RH.put("sho", "しょ"); RH.put("jo", "じょ");
-
-        RH.put("cha", "ちゃ");
-        RH.put("chu", "ちゅ");
-        RH.put("cho", "ちょ");
-
-        RH.put("k", "っ");
-        RH.put("s", "っ");
-        RH.put("j", "っ");
-        RH.put("t", "っ");
-        RH.put("p", "っ");
+        FileIO yote = new FileIO("RH.txt");
+        for(int i = 1; i < yote.lines.size(); i = i+2){
+            RH.put(yote.lines.get(i), yote.lines.get(i+1));
+        }
     }
 
     /**

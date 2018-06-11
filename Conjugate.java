@@ -9,7 +9,6 @@ public class Conjugate
 {
     // instance variables - replace the example below with your own
     private Verb verb;
-    //annoying comment
     /**
      * Conjugates to -te form
      */
