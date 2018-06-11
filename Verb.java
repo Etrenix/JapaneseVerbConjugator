@@ -8,6 +8,7 @@ import java.util.*;
 public class Verb
 {
     // instance variables - replace the example below with your own
+    // TESTING CHANGES ON GITHUB
     private static final String VOWELS = " aiueo";
     private static final String CONSONANTS = " kgsjztdnfhbpmrwy";
     private String word;
